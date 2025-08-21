@@ -1,17 +1,29 @@
 <header>
     <div class="header main-width">
-        <a class="header__logo" href="">
-            <picture>
-
-                <source media="(max-width: 768px)" srcset="img/logo-mobile.svg">
-                <!-- Если разрешение больше 768px, используем исходное изображение -->
-                <img src="img/logo.svg">
-            </picture>
-
+        <a class="header__burger" href="#">
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+         </a>
+        <nav class="header__nav">
+            <a href="#">IV drips</a>
+             <a href="#">how it works</a>
+              <a href="#">testimonials</a>
+               <a href="#">faq</a>
+        </nav>
+        <a class="header__logo" href="/">
+                <img src="img/logo.webp">
         </a>
-        <div class="header__center show-nav">
-            героини
+        <div class="header__controls">
+            <div class="header__location">
+                <span>Dubai</span>
+            </div>
+            <div class="header__lang">
+                <span>EN</span>
+            </div>
         </div>
-        <a href="" class="header__logo header__logo--womanru"><img src="@img/womanru_logo.svg"></a>
+        <a class="header__btn btn">
+            Book IV drip
+        </a>
     </div>
 </header>
