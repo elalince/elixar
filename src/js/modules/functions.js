@@ -53,5 +53,28 @@ const solutionsSlider = new Swiper('.solutions__slider', {
         }
     }
 });
+const solutionsSlider2 = new Swiper('.reviews__slider', {
+    slidesPerView: 'auto',
+    spaceBetween: 12,
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    scrollbar: {
+        el: '.reviews__scrollbar',
+        draggable: true,
+    },
+    breakpoints: {
+        768: {
+            scrollbar: { enabled: false },
+            navigation: { enabled: true },
+        },
+        0: {
+            scrollbar: { enabled: true },
+            navigation: { enabled: false },
+        }
+    }
+});
 }
 

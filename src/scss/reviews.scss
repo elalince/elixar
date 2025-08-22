@@ -1,0 +1,114 @@
+.reviews {
+    padding: 120px 0;
+
+    &__slider {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 12px;
+        position: relative;
+        overflow: visible;
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            background: #f4f2ef;
+           border: 1px solid #e5e5e5;
+
+            &:hover {
+              svg {
+                fill: #95d4fc;
+                transition: all .3s ease;
+              }      
+            }
+        }
+    }
+
+    &__slide {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        align-items: stretch;
+        flex: 0 0 auto;
+        width: 433px;
+        height: 360px;
+        border: 1px solid #ddd;
+        background: #f8f8f8;
+        border-radius: 30px;
+        padding: 24px 12px 24px 24px;
+    }
+
+
+    &__content {
+         display: flex;
+         flex-direction: column;
+         gap: 16px;
+        width: 100%;
+        height: 246px;
+        padding: 0 12px 12px 0;
+        margin-bottom: 12px;
+        overflow-y: auto;
+
+        /* Кастомизация скролла */
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #f4f2ef;
+            border-radius: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #535353;
+            border-radius: 3px;
+        }
+        &::-webkit-scrollbar-button {
+            display: none;
+            height: 0;
+            width: 0;
+        }
+        scrollbar-width: thin;
+        scrollbar-color: #535353 #f4f2ef;
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+    }
+
+    &__images {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        
+        div {
+            width: 57px;
+            height: 57px;
+            background-size: cover;
+            border-radius: 10px;
+        }
+    }
+
+
+    &__review-author {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    &__review-author-name {
+        font-weight: 600;
+        font-size: 20px;
+       }
+
+    &__review-author-city {
+        font-weight: 500;
+        font-size: 14px;
+        opacity: 0.6;
+    }
+
+    &__review-rating {
+       margin-left: auto;
+        padding-right: 12px;
+    }
+}

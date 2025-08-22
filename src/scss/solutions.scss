@@ -9,6 +9,19 @@
         gap: 12px;
         position: relative;
         overflow: visible;
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            background: #f4f2ef;
+           border: 1px solid #e5e5e5;
+
+            &:hover {
+              svg {
+                fill: #95d4fc;
+                transition: all .3s ease;
+              }      
+            }
+        }
     }
 
     &__slide {

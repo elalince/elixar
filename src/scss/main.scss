@@ -92,6 +92,16 @@ h2 {
   color: #2e2e2e;
   margin-top: 0;
   margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  span {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 133%;
+    text-transform: none;
+  }
 }
 
 .svg {
@@ -261,8 +271,7 @@ header {
                 width: 56px;
                 height: 56px;
                 border-radius: 50%;
-                background: #f4f2ef;
-                border: 1px solid #f4f2ef;
+                
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
@@ -273,11 +282,6 @@ header {
 
                 &:after {
                     display: none;
-                }
-
-                &:hover {
-                    background: #fff;
-                    border: 1px solid #d6cfb5;
                 }
             }
         }
