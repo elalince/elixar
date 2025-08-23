@@ -1,0 +1,72 @@
+.faq {
+  padding: 120px 0;
+
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 887px;
+  }
+
+  &__item {
+    border-radius: 20px;
+    padding: 16px 24px;
+    background: #fff;
+    cursor: pointer;
+
+    &.open {
+      .faq__answer {
+        max-height: 500px;
+        margin-top: 16px;
+      }
+
+      .faq__question:after {
+        background: #95d4fc url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'><path d='M9.5793 0.389907L9.5793 13.025L15.8968 6.70744L16.9888 7.79936L8.79936 15.9888L0.609972 7.79936L1.70189 6.70744L8.01942 13.025L8.01942 0.389907L9.5793 0.389907Z' fill='%23FFFFFF'/></svg>") center no-repeat;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 125%;
+    color: #131313;
+
+    &:after {
+      content: '';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #f4f2ef url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'><path d='M9.5793 0.389907L9.5793 13.025L15.8968 6.70744L16.9888 7.79936L8.79936 15.9888L0.609972 7.79936L1.70189 6.70744L8.01942 13.025L8.01942 0.389907L9.5793 0.389907Z' fill='%231F1F1F'/></svg>") center no-repeat;
+    }
+
+    &:hover:after {
+      background: #f4f2ef url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'><path d='M9.5793 0.389907L9.5793 13.025L15.8968 6.70744L16.9888 7.79936L8.79936 15.9888L0.609972 7.79936L1.70189 6.70744L8.01942 13.025L8.01942 0.389907L9.5793 0.389907Z' fill='%2395d4fc'/></svg>") center no-repeat;
+    }
+  }
+
+  &__answer {
+    padding-right: 62px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: #131313;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .3s ease;
+  }
+}

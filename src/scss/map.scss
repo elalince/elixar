@@ -1,0 +1,79 @@
+.map {
+  padding: 80px 0;
+  background-image: url("@img/map.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  h2 {
+    color: #ffffff;
+    gap: 12px;
+    margin-bottom: 39px;
+    span {
+      font-size: 16px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 434px;
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 23px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 30px;
+    padding: 18px;
+    background: rgba(248, 248, 248, 0.2);
+    backdrop-filter: blur(3px) saturate(130%);
+    -webkit-backdrop-filter: blur(3px) saturate(130%);
+    color: #fff;
+
+    &:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(160deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.5));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+  }
+
+  &__city {
+    font-weight: 600;
+    font-size: 16px;
+    width: 35%;
+    min-width: 35%;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  &__time {
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+  }
+}
