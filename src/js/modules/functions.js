@@ -4,10 +4,11 @@ export function showNav() {
         const header = document.querySelector("header");
         const nav = document.querySelector(".header__nav");
         const links = nav.querySelectorAll("a");
+        const offset = 80; // отступ сверху
 
         // клик по бургеру
         burger.addEventListener("click", e => {
-            e.stopPropagation(); // чтобы клик по бургеру не закрыл сразу
+            e.stopPropagation();
             burger.classList.toggle("active");
             header.classList.toggle("nav-active");
             header.classList.remove("dropdown-active");
@@ -26,14 +27,15 @@ export function showNav() {
                 const target = document.getElementById(targetId);
 
                 if (target) {
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
                     window.scrollTo({
-                        top: target.offsetTop,
+                        top: targetPosition - offset,
                         behavior: "smooth"
                     });
                 }
 
                 burger.classList.remove("active");
-                header.classList.remove("active");
+                header.classList.remove("nav-active");
                 nav.classList.remove("open");
             });
         });
@@ -52,6 +54,7 @@ export function showNav() {
         });
     });
 }
+
 
 
 export function headerBg() {
@@ -277,8 +280,6 @@ export function topBlockScroll() {
     if (!topBlock) return;
 
     // Только для десктопа
-    if (window.innerWidth <= 1024) return;
-
     let isScrolling = false;
 
     window.addEventListener('wheel', function(e) {

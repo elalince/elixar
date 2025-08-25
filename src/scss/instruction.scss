@@ -1,5 +1,5 @@
 .instruction {
-    padding-bottom: 120px;
+    padding: 120px 0;
 
     &__list {
         display: flex;
@@ -100,6 +100,11 @@
         right: 24px;
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.3s;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+            background: #fff;
+            color: #78beea;
+        }
     }
 }

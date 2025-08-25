@@ -37,4 +37,12 @@
     }
   }
   }
+
+  .infographics__items {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .infographics__item {
+    width: calc(100% / 3 - 12px);
+  }
 }

@@ -723,7 +723,7 @@ footer .footer__nav a:hover {
 }
 
 .reviews {
-  padding: 120px 0;
+  padding: 120px 0 0;
 }
 .reviews__slider {
   display: flex;
@@ -822,7 +822,7 @@ footer .footer__nav a:hover {
 }
 
 .instruction {
-  padding-bottom: 120px;
+  padding: 120px 0;
 }
 .instruction__list {
   display: flex;
@@ -913,7 +913,11 @@ footer .footer__nav a:hover {
   right: 24px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease;
+}
+.instruction__btn:hover {
+  background: #fff;
+  color: #78beea;
 }
 
 .main-form {
@@ -1257,6 +1261,13 @@ footer .footer__nav a:hover {
   .instruction__item:hover {
     flex: auto;
   }
+  .infographics__items {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .infographics__item {
+    width: calc(33.3333333333% - 12px);
+  }
 }
 @media (max-width: 768px) {
   h2 {
@@ -1421,6 +1432,7 @@ footer .footer__nav a:hover {
   }
   .top-block__description {
     font-size: 16px;
+    text-align: center;
   }
   .top-block__buttons {
     flex-direction: column;
@@ -1485,7 +1497,7 @@ footer .footer__nav a:hover {
     margin-top: 0;
   }
   .reviews {
-    padding: 72px 0;
+    padding: 72px 0 0;
   }
   .reviews h2 {
     display: none;
@@ -1505,7 +1517,7 @@ footer .footer__nav a:hover {
     padding-right: 0;
   }
   .instruction {
-    padding-bottom: 72px;
+    padding: 72px 0;
   }
   .instruction__list {
     flex-wrap: wrap;

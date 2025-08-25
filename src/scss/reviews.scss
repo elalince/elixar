@@ -1,5 +1,5 @@
 .reviews {
-    padding: 120px 0;
+    padding: 120px 0 0;
 
     &__slider {
         display: flex;
@@ -18,7 +18,7 @@
               svg {
                 fill: #95d4fc;
                 transition: all .3s ease;
-              }      
+              }
             }
         }
     }
@@ -79,7 +79,7 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        
+
         div {
             width: 57px;
             height: 57px;

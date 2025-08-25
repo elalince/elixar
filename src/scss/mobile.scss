@@ -199,6 +199,7 @@
 
     &__description {
       font-size: 16px;
+      text-align: center;
     }
 
     &__buttons {
@@ -281,7 +282,7 @@
   }
 
   .reviews {
-    padding: 72px 0;
+    padding: 72px 0 0;
 
     h2 {
       display: none;
@@ -307,7 +308,7 @@
   }
 
   .instruction {
-    padding-bottom: 72px;
+    padding: 72px 0;
 
     &__list {
       flex-wrap: wrap;
