@@ -482,13 +482,8 @@ footer .footer__nav a:hover {
 
 .top-block {
   height: 100vh;
-  max-height: 750px;
   background: url(../img/top-bg.webp) no-repeat top center;
-}
-@media (min-width: 1440px) {
-  .top-block {
-    background-size: cover;
-  }
+  background-size: cover;
 }
 .top-block__container {
   display: flex;
@@ -496,7 +491,6 @@ footer .footer__nav a:hover {
   justify-content: center;
   align-items: flex-start;
   height: 100vh;
-  max-height: 750px;
   position: relative;
 }
 .top-block__content {
@@ -1248,6 +1242,9 @@ footer .footer__nav a:hover {
   header .header__controls {
     gap: 3vw;
   }
+  .top-block {
+    background-position-x: 80%;
+  }
 }
 @media (max-width: 1024px) {
   .instruction__list {
@@ -1408,13 +1405,13 @@ footer .footer__nav a:hover {
     display: none;
   }
   .top-block {
-    max-height: 638px;
     background: url("../img/top-bg-mobile.webp") top center no-repeat;
+    background-size: cover;
+    background-position-x: 80%;
   }
   .top-block__container {
     justify-content: flex-end;
     align-items: center;
-    max-height: 638px;
     padding-bottom: 37px;
   }
   .top-block__content {
