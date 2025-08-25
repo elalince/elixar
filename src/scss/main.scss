@@ -33,7 +33,7 @@ body {
   overflow-x: hidden;
 }
 main {
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 section {
 
@@ -528,18 +528,18 @@ footer {
     border-radius: 50%;
     width: 62px;
     height: 62px;
-    background: #95d4fc;
+    background: #4caf50;
 
   }
 
   &__label {
     position: absolute;
     top: 50%;
-    left: -130px;
+    left: -160px;
     transform: translateY(-50%);
     background: url("@img/label-bg.webp") center no-repeat;
     padding: 8px 12px;
-    width: 121px;
+    width: 151px;
     height: 33px;
     font-weight: 500;
     font-size: 14px;
