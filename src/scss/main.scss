@@ -33,7 +33,7 @@ body {
   overflow-x: hidden;
 }
 main {
-
+  overflow-x: hidden;
 }
 section {
 
@@ -211,6 +211,10 @@ header {
       text-transform: uppercase;
       color: #fff;
 
+      &--mobile {
+        display: none;
+      }
+
       span:hover {
         text-decoration: underline;
         cursor: pointer;
@@ -267,6 +271,16 @@ header {
       white-space: nowrap;
       opacity: 0;
       visibility: hidden;
+      transition: all .3s ease;
+
+      &.open {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      >div {
+        display: none;
+      }
 
       &:after {
         content: "";
@@ -342,6 +356,7 @@ header {
         .swiper-button-prev,
         .swiper-button-next {
             display: none;
+
             @media (min-width: 768px) {
                 display: flex;
                 z-index: 2;
@@ -369,7 +384,7 @@ header {
             height: 4px !important;
             background: #0000001a !important;
             border-radius: 3px !important;
-            margin: 32px 0 0 0 !important;
+            margin: 20px 0 0 0 !important;
             left: auto !important;
             bottom: auto !important;
             width: 100% !important;

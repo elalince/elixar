@@ -18,21 +18,25 @@
         background-size: cover;
         border-radius: 24px;
         padding: 24px;
-        flex: 1 1 0;
+        flex: 1;
         gap: 16px;
         transition: flex-basis 0.3s, flex-grow 0.3s;
 
         &:first-child {
+            background-image: url(@img/instruction-img-1.webp);
             background-position-x: 20%;
         }
 
         &:nth-child(2){
+            background-image: url(@img/instruction-img-2.webp);
             background-position-x: 65%;
         }
         &:nth-child(3){
+            background-image: url(@img/instruction-img-3.webp);
             background-position-x: 70%;
         }
         &:nth-child(4){
+            background-image: url(@img/instruction-img-4.webp);
             background-position-x: 40%;
         }
 
@@ -40,7 +44,6 @@
         &:hover {
             flex: 0 0 50%;
             z-index: 2;
-
         }
     }
 
@@ -64,6 +67,13 @@
         line-height: 120%;
         color: #fcf7f0;
         margin-top: auto;
+        word-wrap: break-word;
+        overflow-wrap: anywhere;
+
+        .breakable {
+            display: inline-block;
+            white-space: normal;
+        }
     }
 
     &__text {

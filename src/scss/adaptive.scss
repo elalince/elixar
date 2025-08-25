@@ -1,0 +1,36 @@
+@media (max-width: 1439px) {
+  header {
+    .header {
+      gap: 3vw;
+
+      &__nav {
+        gap: 2vw;
+      }
+
+      &__controls {
+        gap: 3vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .instruction {
+  &__list {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__item {
+    gap: 8px;
+    width: calc(50% - 8px);
+    flex: auto;
+    transition: none;
+    height: 245px;
+
+    &:hover {
+      flex: auto;
+    }
+  }
+  }
+}

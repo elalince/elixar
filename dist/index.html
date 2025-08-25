@@ -20,24 +20,27 @@
 <body class="index-page">
     <header>
     <div class="header main-width">
-        <a class="header__burger" href="#">
-            <span class="header__burger-line"></span>
+        <a class="header__burger">
             <span class="header__burger-line"></span>
             <span class="header__burger-line"></span>
          </a>
         <nav class="header__nav">
-            <a href="#">IV drips</a>
-             <a href="#">how it works</a>
-              <a href="#">testimonials</a>
-               <a href="#">faq</a>
+            <a href="#drips">IV drips</a>
+             <a href="#howitworks">how it works</a>
+              <a href="#testimonials">testimonials</a>
+               <a href="#faq">faq</a>
         </nav>
         <a class="header__logo" href="/">
-                <img src="img/logo.webp">
+            <img src="img/logo.webp">
         </a>
         <div class="header__controls">
+            <div class="header__controls--mobile">
+                <img src="img/icons/lang.svg">
+            </div>
             <div class="header__location">
                 <span>Dubai</span>
-                <div class="header__dropdown">
+                <div class="header__dropdown header__dropdown--location">
+                    <div>Location</div>
                     <a href="">Dubai</a>
                     <a href="">abu Dhabi</a>
                     <a href="">Tbilisi</a>
@@ -45,7 +48,8 @@
             </div>
             <div class="header__lang">
                 <span>EN</span>
-                <div class="header__dropdown">
+                <div class="header__dropdown header__dropdown--lang">
+                    <div>language</div>
                     <a href="">En</a>
                     <a href="">Ru</a>
                     <a href="">AR</a>
@@ -131,7 +135,7 @@
             </div>
        </div>
        </div>
-       <div class="solutions">
+       <div class="solutions" id="drips">
             <div class="main-width">
                 <h2>IV Solutions</h2>
                 <div class="solutions__slider slider swiper">
@@ -236,7 +240,7 @@
 </div>
             </div>
        </div>
-       <div class="reviews">
+       <div class="reviews" id="testimonials">
             <div class="main-width">
                 <h2>Customer Testimonials
                     <span>Kyle transformed our home beyond our expectations!</span>
@@ -255,12 +259,12 @@
             </div>
             <div class="reviews__review-author">
                     <div class="reviews__review-author-name">Omar K.</div>
-                    <div class="reviews_review-author-city">Downtown Dubai</div>
+                    <div class="reviews__review-author-city">Downtown Dubai</div>
                 </div>
                 <div class="reviews__review-rating review__rating review__rating--5">
                     <img src="img/stars.webp">
                 </div>
-            </div> 
+            </div>
         <div class="reviews__slide swiper-slide">
             <div class="reviews__content">
                 <div class="reviews__text">
@@ -273,13 +277,13 @@
             </div>
             <div class="reviews__review-author">
                     <div class="reviews__review-author-name">Omar K.</div>
-                    <div class="reviews_review-author-city">Downtown Dubai</div>
+                    <div class="reviews__review-author-city">Downtown Dubai</div>
                 </div>
                 <div class="reviews__review-rating review__rating review__rating--5">
                     <img src="img/stars.webp">
                 </div>
             </div>
-        </div>  
+        </div>
     <!-- Навигация для десктопа -->
      <div class="reviews__nav slider__nav">
         <div class="swiper-button-prev">
@@ -299,35 +303,36 @@
 
             </div>
        </div>
-       <div class="instruction">
+       <div class="instruction" id="howitworks">
             <div class="main-width">
                 <h2>how it works</h2>
                 <div class="instruction__list">
-    <div class="instruction__item" style="background-image: url(img/instruction-img-1.webp);">
+    <div class="instruction__item">
         <div class="instruction__number">1</div>
         <div class="instruction__title">Book Your IV in Minutes</div>
         <div class="instruction__text">Choose your treatment and confirm your booking in minutes.</div>
         <a class="instruction__btn btn">Book IV drip</a>
     </div>
-   <div class="instruction__item" style="background-image: url(img/instruction-img-2.webp);">
+   <div class="instruction__item">
         <div class="instruction__number">2</div>
-        <div class="instruction__title">Consultation with Our Doctor</div>  
+        <div class="instruction__title">Consultation with Our Doctor</div>
         <div class="instruction__text">We assess your needs and recommend the perfect formula.</div>
          <a class="instruction__btn btn">Book IV drip</a>
     </div>
-    <div class="instruction__item" style="background-image: url(img/instruction-img-3.webp);">
+    <div class="instruction__item">
         <div class="instruction__number">3</div>
-        <div class="instruction__title">Nurse arrival to your home/office/yacht/hotel</div>  
+        <div class="instruction__title">Nurse arrival to your home/<span class="breakable">office/</span><span class="breakable">yacht/</span><span class="breakable">hotel</span></div>
         <div class="instruction__text">Home, office, yacht, or hotel — we come to you.</div>
          <a class="instruction__btn btn">Book IV drip</a>
     </div>
-    <div class="instruction__item" style="background-image: url(img/instruction-img-4.webp);">
+    <div class="instruction__item">
         <div class="instruction__number">4</div>
-        <div class="instruction__title">Feel Your Best</div>  
+        <div class="instruction__title">Feel Your Best</div>
         <div class="instruction__text">Relax and enjoy the benefits of your IV therapy.</div>
          <a class="instruction__btn btn">Book IV drip</a>
     </div>
 </div>
+
             </div>
        </div>
         <div class="main-form">
@@ -387,7 +392,7 @@
 
             </div>
         </div>
-        <div class="faq">
+        <div class="faq" id="faq">
             <div class="faq__wrapper main-width">
                 <h2>FAQ</h2>
                 <div class="faq__list">

@@ -1,66 +1,123 @@
 export function showNav() {
+    document.addEventListener("DOMContentLoaded", () => {
+        const burger = document.querySelector(".header__burger");
+        const header = document.querySelector("header");
+        const nav = document.querySelector(".header__nav");
+        const links = nav.querySelectorAll("a");
 
-    const navLink = document.querySelector( '.show-nav');
-    const nav = document.querySelector( '.top-block__nav');
-    const spring = document.querySelector( '.top-block__spring');
-    const content = document.querySelector( '.top-block__content');
-    const closeLink = document.querySelector( '.nav__close');
-    const headerInset = document.querySelector( 'header.inset')
-    const html = document.documentElement;
+        // клик по бургеру
+        burger.addEventListener("click", e => {
+            e.stopPropagation(); // чтобы клик по бургеру не закрыл сразу
+            burger.classList.toggle("active");
+            header.classList.toggle("nav-active");
+            header.classList.remove("dropdown-active");
+            nav.classList.toggle("open");
 
-    $(navLink).on('click', function() {
-        $(navLink).toggleClass('active');
-        $(nav).toggleClass('active');
-        $(spring).toggleClass('hidden');
-        $(content).toggleClass('hidden');
-        $(headerInset).toggleClass('open');
-        html.classList.add('no-scroll');
-    });
-    $(closeLink).on('click', function() {
-        $(navLink).removeClass('active');
-        $(nav).removeClass('active');
-        $(spring).removeClass('hidden');
-        $(content).removeClass('hidden');
-        $(headerInset).removeClass('open');
-        html.classList.remove('no-scroll');
-    });
-
-}
-export function showDropdown() {
-document.querySelectorAll(".header__location, .header__lang").forEach(wrapper => {
-    const trigger = wrapper.querySelector("span");
-    const dropdown = wrapper.querySelector(".header__dropdown");
-
-    trigger.addEventListener("click", e => {
-        e.stopPropagation(); // чтобы клик по span не закрыл сразу
-
-        // закрываем все остальные открытые дропдауны
-        document.querySelectorAll(".header__dropdown").forEach(d => {
-            if (d !== dropdown) {
-                d.style.opacity = "0";
-                d.style.visibility = "hidden";
-            }
+            document.querySelectorAll(".header__dropdown.open").forEach(d => {
+                if (d !== dropdown) d.classList.remove("open");
+            });
         });
 
-        // переключаем текущее
-        if (dropdown.style.opacity === "1") {
-            dropdown.style.opacity = "0";
-            dropdown.style.visibility = "hidden";
-        } else {
-            dropdown.style.opacity = "1";
-            dropdown.style.visibility = "visible";
+        // клик по ссылке в меню
+        links.forEach(link => {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+                const targetId = link.getAttribute("href").slice(1);
+                const target = document.getElementById(targetId);
+
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop,
+                        behavior: "smooth"
+                    });
+                }
+
+                burger.classList.remove("active");
+                header.classList.remove("active");
+                nav.classList.remove("open");
+            });
+        });
+
+        // закрытие по клику вне nav
+        document.addEventListener("click", e => {
+            if (
+                nav.classList.contains("open") &&
+                !nav.contains(e.target) &&
+                !burger.contains(e.target)
+            ) {
+                burger.classList.remove("active");
+                header.classList.remove("nav-active");
+                nav.classList.remove("open");
+            }
+        });
+    });
+}
+
+
+export function headerBg() {
+    document.addEventListener("DOMContentLoaded", () => {
+        const header = document.querySelector("header");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 0) {
+                header.classList.add("fixed");
+            } else {
+                header.classList.remove("fixed");
+            }
+        });
+    });
+}
+
+export function showDropdown() {
+    // триггеры у .header__location и .header__lang
+    document.querySelectorAll(".header__location, .header__lang").forEach(wrapper => {
+        const trigger = wrapper.querySelector("span");
+        const dropdown = wrapper.querySelector(".header__dropdown");
+
+        trigger.addEventListener("click", e => {
+            e.stopPropagation();
+
+            // закрываем все остальные открытые дропдауны
+            document.querySelectorAll(".header__dropdown.open").forEach(d => {
+                if (d !== dropdown) d.classList.remove("open");
+            });
+
+            // переключаем текущий
+            dropdown.classList.toggle("open");
+        });
+    });
+
+    // логика для мобильных контролов
+    document.addEventListener("DOMContentLoaded", () => {
+        const controls = document.querySelector(".header__controls--mobile");
+        const header = document.querySelector("header");
+        const dropdowns = document.querySelectorAll(".header__dropdown");
+        const nav = document.querySelector(".header__nav");
+        const burger = document.querySelector(".header__burger");
+
+        controls.addEventListener("click", e => {
+            e.stopPropagation(); // чтобы глобальный клик не закрыл
+
+            header.classList.toggle("dropdown-active");
+            header.classList.remove("nav-active");
+            nav.classList.remove("open");
+            burger.classList.remove("active");
+            dropdowns.forEach(drop => drop.classList.toggle("open"));
+        });
+    });
+
+    // закрыть дропдауны при клике вне (только если нет активного header)
+    document.addEventListener("click", () => {
+        const header = document.querySelector("header");
+        if (header.classList.contains("dropdown-active")) {
+            document.querySelectorAll(".header__dropdown.open").forEach(d => {
+                d.classList.remove("open");
+            });
+            header.classList.remove("dropdown-active");
         }
     });
-});
-
-// закрыть дропдауны при клике вне
-document.addEventListener("click", () => {
-    document.querySelectorAll(".header__dropdown").forEach(d => {
-        d.style.opacity = "0";
-        d.style.visibility = "hidden";
-    });
-});
 }
+
 
 
 export function mainSlider() {
@@ -113,44 +170,59 @@ const solutionsSlider2 = new Swiper('.reviews__slider', {
 }
 
 export function instructionReveal() {
-    const items = document.querySelectorAll('.instruction__item');
+    if (window.innerWidth <= 768) return; // ❌ на мобильных не запускаем
+
+    const items = document.querySelectorAll(".instruction__item");
 
     items.forEach(item => {
-        const text = item.querySelector('.instruction__text');
-        const btn = item.querySelector('.instruction__btn');
+        const text = item.querySelector(".instruction__text");
+        const btn = item.querySelector(".instruction__btn");
 
-        item.addEventListener('mouseenter', () => {
-            // Сбросить таймер, если был
+        item.addEventListener("mouseenter", () => {
+            // Убираем active у всех элементов
+            items.forEach(i => {
+                if (i !== item) i.classList.remove("active");
+            });
+
+            // Добавляем active текущему элементу
+            item.classList.add("active");
+
+            // Сброс таймера
             clearTimeout(item._revealTimeout);
 
             // Ждём окончания transition (0.3s)
             item._revealTimeout = setTimeout(() => {
                 if (text) {
-                    text.style.position = 'relative';
-                    text.style.opacity = '1';
-                    text.style.transform = 'translateY(0)';
+                    text.style.position = "relative";
+                    text.style.opacity = "1";
+                    text.style.transform = "translateY(0)";
                 }
                 if (btn) {
-                    btn.style.opacity = '1';
-                    btn.style.visibility = 'visible';
+                    btn.style.opacity = "1";
+                    btn.style.visibility = "visible";
                 }
             }, 300);
         });
 
-        item.addEventListener('mouseleave', () => {
+        item.addEventListener("mouseleave", () => {
             clearTimeout(item._revealTimeout);
             if (text) {
-                 text.style.position = 'absolute';
-                text.style.opacity = '0';
-                text.style.transform = 'translateY(30px)';
+                text.style.position = "absolute";
+                text.style.opacity = "0";
+                text.style.transform = "translateY(30px)";
             }
             if (btn) {
-                btn.style.opacity = '0';
-                btn.style.visibility = 'hidden';
+                btn.style.opacity = "0";
+                btn.style.visibility = "hidden";
             }
+
+            // Убираем active при уходе мыши
+            item.classList.remove("active");
         });
     });
 }
+
+
 
 export function faqOpening() {
     const faqItems = document.querySelectorAll('.faq__item');
