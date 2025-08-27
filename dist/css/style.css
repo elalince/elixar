@@ -12,6 +12,7 @@ html {
   margin: 0;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 html.no-scroll {
   overflow: hidden;
