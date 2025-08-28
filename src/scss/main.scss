@@ -531,7 +531,18 @@ footer {
     height: 62px;
     background: #4caf50;
 
+    &--botim {
+      margin-top: 10px;
+      background: none;
+      border-radius: 50%;
+
+      img {
+        border-radius: 50%;
+      }
+    }
   }
+
+
 
   &__label {
     position: absolute;
@@ -539,7 +550,7 @@ footer {
     left: -160px;
     transform: translateY(-50%);
     background: url("@img/label-bg.webp") center no-repeat;
-    padding: 8px 12px;
+    padding:8px 14px 8px 4px;
     width: 151px;
     height: 33px;
     font-weight: 500;

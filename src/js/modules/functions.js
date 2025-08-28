@@ -275,40 +275,40 @@ export function callLink() {
     });
 }
 
-export function topBlockScroll() {
-    const topBlock = document.querySelector('.top-block');
-    if (!topBlock) return;
+// export function topBlockScroll() {
+//     const topBlock = document.querySelector('.top-block');
+//     if (!topBlock) return;
 
-    // Только для десктопа
-    let isScrolling = false;
+//     // Только для десктопа
+//     let isScrolling = false;
 
-    window.addEventListener('wheel', function(e) {
-        if (isScrolling) return;
-        if (window.scrollY > 10) return; // Только если наверху страницы
+//     window.addEventListener('wheel', function(e) {
+//         if (isScrolling) return;
+//         if (window.scrollY > 10) return; // Только если наверху страницы
 
-        // Только если скроллим вниз
-        if (e.deltaY > 0) {
-            isScrolling = true;
-            const target = topBlock.offsetHeight;
-            const start = window.scrollY;
-            const duration = 700;
-            const startTime = performance.now();
+//         // Только если скроллим вниз
+//         if (e.deltaY > 0) {
+//             isScrolling = true;
+//             const target = topBlock.offsetHeight;
+//             const start = window.scrollY;
+//             const duration = 700;
+//             const startTime = performance.now();
 
-            function animateScroll(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const ease = 0.5 - Math.cos(progress * Math.PI) / 2; // easeInOut
+//             function animateScroll(currentTime) {
+//                 const elapsed = currentTime - startTime;
+//                 const progress = Math.min(elapsed / duration, 1);
+//                 const ease = 0.5 - Math.cos(progress * Math.PI) / 2; // easeInOut
 
-                window.scrollTo(0, start + (target - start) * ease);
+//                 window.scrollTo(0, start + (target - start) * ease);
 
-                if (progress < 1) {
-                    requestAnimationFrame(animateScroll);
-                } else {
-                    isScrolling = false;
-                }
-            }
+//                 if (progress < 1) {
+//                     requestAnimationFrame(animateScroll);
+//                 } else {
+//                     isScrolling = false;
+//                 }
+//             }
 
-            requestAnimationFrame(animateScroll);
-        }
-    }, { passive: false });
-}
+//             requestAnimationFrame(animateScroll);
+//         }
+//     }, { passive: false });
+// }

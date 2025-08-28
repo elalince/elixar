@@ -8,4 +8,4 @@ flsFunctions.instructionReveal();
 flsFunctions.faqOpening();
 flsFunctions.dropdown();
 flsFunctions.callLink();
-flsFunctions.topBlockScroll();
+// flsFunctions.topBlockScroll();

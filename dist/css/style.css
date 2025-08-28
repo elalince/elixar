@@ -459,13 +459,21 @@ footer .footer__nav a:hover {
   height: 62px;
   background: #4caf50;
 }
+.call-link__btn--botim {
+  margin-top: 10px;
+  background: none;
+  border-radius: 50%;
+}
+.call-link__btn--botim img {
+  border-radius: 50%;
+}
 .call-link__label {
   position: absolute;
   top: 50%;
   left: -160px;
   transform: translateY(-50%);
   background: url("../img/label-bg.webp") center no-repeat;
-  padding: 8px 12px;
+  padding: 8px 14px 8px 4px;
   width: 151px;
   height: 33px;
   font-weight: 500;
@@ -974,7 +982,7 @@ footer .footer__nav a:hover {
   border-radius: 30px 30px 0 0;
 }
 .form .dropdown.open .dropdown-list {
-  max-height: 500px; /* достаточно большое значение для всех элементов */
+  max-height: 500px;
   padding: 8px 24px 16px;
   opacity: 1;
 }
@@ -1000,7 +1008,7 @@ footer .footer__nav a:hover {
   margin: 0;
   z-index: 10;
   opacity: 0;
-  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
 .form .dropdown ul li {
   list-style: none;
@@ -1106,10 +1114,6 @@ footer .footer__nav a:hover {
   background: #fff;
   cursor: pointer;
 }
-.faq__item.open .faq__answer {
-  max-height: 500px;
-  margin-top: 16px;
-}
 .faq__item.open .faq__question:after {
   background: #95d4fc url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'><path d='M9.5793 0.389907L9.5793 13.025L15.8968 6.70744L16.9888 7.79936L8.79936 15.9888L0.609972 7.79936L1.70189 6.70744L8.01942 13.025L8.01942 0.389907L9.5793 0.389907Z' fill='%23FFFFFF'/></svg>") center no-repeat;
   transform: rotate(180deg);
@@ -1123,6 +1127,7 @@ footer .footer__nav a:hover {
   font-size: 24px;
   line-height: 125%;
   color: #131313;
+  transition: all 0.5s ease;
 }
 .faq__question:after {
   content: "";
@@ -1139,14 +1144,21 @@ footer .footer__nav a:hover {
   background: #f4f2ef url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'><path d='M9.5793 0.389907L9.5793 13.025L15.8968 6.70744L16.9888 7.79936L8.79936 15.9888L0.609972 7.79936L1.70189 6.70744L8.01942 13.025L8.01942 0.389907L9.5793 0.389907Z' fill='%2395d4fc'/></svg>") center no-repeat;
 }
 .faq__answer {
-  padding-right: 62px;
   font-weight: 500;
   font-size: 20px;
   line-height: 150%;
   color: #131313;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+.faq__answer div {
+  padding-top: 15px;
+  padding-right: 62px;
+}
+.open .faq__answer {
+  max-height: 1000px;
+  opacity: 1;
 }
 
 .information {
@@ -1356,6 +1368,7 @@ footer .footer__nav a:hover {
     position: relative;
     z-index: 1;
     margin-left: 10px;
+    max-width: 104px;
   }
   header .header__controls {
     gap: 0;
